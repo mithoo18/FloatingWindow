@@ -25,15 +25,13 @@ public class FloatingWindow extends Service implements View.OnClickListener {
         return null;
     }
 
-
     @Override
     public void onCreate() {
         super.onCreate();
 
-
         mFloatingView = LayoutInflater.from(this).inflate(R.layout.layout_floating_widget,null);
 
-        final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+                final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
