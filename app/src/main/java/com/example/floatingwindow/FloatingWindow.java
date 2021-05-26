@@ -61,7 +61,7 @@ public class FloatingWindow extends Service implements View.OnClickListener {
                         initialX = params.x;
                         initialY = params.y;
                         initialTouchX = motionEvent.getRawX();
-                        initialTouchY = motionEvent.getRawX();
+                        initialTouchY = motionEvent.getRawY();
                         return true;
 
                     case MotionEvent.ACTION_UP:
@@ -72,7 +72,7 @@ public class FloatingWindow extends Service implements View.OnClickListener {
 
                      case MotionEvent.ACTION_MOVE:
                         params.x = initialX + (int) (motionEvent.getRawX() - initialTouchX );
-                        params.x = initialX + (int) (motionEvent.getRawX() - initialTouchX );
+                        params.y = initialY + (int) (motionEvent.getRawY() - initialTouchY );
                         mWindowManager.updateViewLayout(mFloatingView,params);
                         return true;
                 }
